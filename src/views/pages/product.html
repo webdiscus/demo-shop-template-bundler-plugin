@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+{{ include 'header/head/head' title=config.defaultPageTitle }}
+
+<body class="{{ config.classes.body }}">
+
+    <!-- Navbar -->
+    {{ include 'header/navbar/navbar'
+        configClassList=config.classes.navbar
+        classList="" }}
+    <!-- / Navbar-->
+
+    <!-- Main Section-->
+    <section class="mt-5 {{ config.classes.content }}">
+        <!-- Page Content Goes Here -->
+
+        <!-- Product Top-->
+        <section class="container">
+
+            <!-- Breadcrumbs-->
+            {{ include 'breadcrumbs/breadcrumbs-one' }}
+            <!-- /Breadcrumbs-->
+
+            <div class="row g-5">
+
+                <!-- Images Section-->
+                <div class="col-12 col-lg-7">
+                    {{ include 'product/gallery/images-slideshow-vertical' }}
+                </div>
+                <!-- /Images Section-->
+
+                <!-- Product Info Section-->
+                <div class="col-12 col-lg-5">
+                    {{ include 'product/info/info-one' }}
+                </div>
+                <!-- / Product Info Section-->
+            </div>
+        </section>
+        <!-- / Product Top-->
+
+        <section>
+
+            <!-- Product Tabs-->
+            <div class="mt-7 pt-5 border-top">
+                <div class="container">
+                    {{ include 'product/tabs/tabs-one' }}
+                </div>
+            </div>
+            <!-- / Product Tabs-->
+
+        </section>
+
+        <!-- Related Products-->
+        <div class="container my-8">
+            <h3 class="fs-4 fw-bold mb-5 text-center">You May Also Like</h3>
+            {{#if category-products }}
+                {{ include 'swiper/swiper-product-carousel-scrollbar' entries=category-products.entries }}
+            {{/if}}
+        </div>
+        <!--/ Related Products-->
+
+
+        <!-- /Page Content -->
+    </section>
+    <!-- / Main Section-->
+
+    <!-- Footer -->
+    {{ include 'footer/footer' configClassList=config.classes.footer classList="" }}
+
+    <!-- Offcanvas Imports-->
+    {{ include 'offcanvas/offcanvas' }}
+
+    <!-- Search Overlay-->
+    {{ include 'search/search-overlay' }}
+
+    <!-- Theme JS -->
+    {{ include 'footer/scripts' }}
+
+</body>
+
+</html>

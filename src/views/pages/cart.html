@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+{{ include 'header/head/head' title=config.defaultPageTitle }}
+
+<body class="{{ config.classes.body }}">
+
+    <!-- Navbar -->
+    {{ include 'header/navbar/navbar'
+        configClassList=config.classes.navbar
+        classList="" }}
+    <!-- / Navbar-->
+
+    <!-- Main Section-->
+    <section class="mt-5 container {{ config.classes.content }}">
+        <!-- Page Content Goes Here -->
+
+        <h1 class="mb-6 display-5 fw-bold text-center">Your Cart</h1>
+
+        <div class="row g-4 g-md-8">
+            <!-- Cart Items -->
+            <div class="col-12 col-lg-6 col-xl-7">
+                <div class="table-responsive">
+                    {{ include 'cart/cart-items' entries=cart-items.entries }}
+                </div>
+            </div>
+            <!-- /Cart Items -->
+            <div class="col-12 col-lg-6 col-xl-5">
+                {{include 'cart/cart-summary' }}
+            </div>
+            <!-- Cart Summary -->
+
+            <!-- /Cart Summary -->
+        </div>
+
+        <!-- /Page Content -->
+    </section>
+    <!-- / Main Section-->
+
+    <!-- Footer -->
+    {{ include 'footer/footer' configClassList=config.classes.footer classList="" }}
+
+    <!-- Offcanvas Imports-->
+    {{ include 'offcanvas/offcanvas' }}
+
+    <!-- Search Overlay-->
+    {{ include 'search/search-overlay' }}
+
+    <!-- Theme JS -->
+    {{ include 'footer/scripts' }}
+
+</body>
+
+</html>

@@ -1,6 +1,4 @@
 (function() {
-
-
     // Add a body class once page has loaded
     // Used to add CSS transitions to elems
     // and avoids content shifting during page load

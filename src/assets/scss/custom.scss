@@ -1,3 +1,5 @@
+@use 'bg-images';
+
 /* Custom styling that only applies to demo logo. Remove when you replace your with your logo */
 .svg-logo-white {
     color: $orange;
@@ -9,7 +11,32 @@
 .navbar-transparent {
     .svg-logo-black {
         color: $white;
-    }   
+    }
 }
 
 /* Add your own custom CSS here... */
+
+// Firefox fix: fit the width to parent container
+.aside-container {
+    width: 100%;
+}
+
+// Firefox fix: fit width of price input element to the aside width
+.widget-filter-price {
+    .input-price-container {
+        >* {
+            max-width: 50%;
+        }
+        .input-group {
+            flex-flow: row;
+            input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// fix aside cart
+.offcanvas {
+    z-index: 1050;
+}

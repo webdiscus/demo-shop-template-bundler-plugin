@@ -1,5 +1,7 @@
 // Import Bootstrap Utils so that we can amend them
-@import '~bootstrap/scss/utilities';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/utilities';
 
 $utilities: map-merge(
   $utilities,
@@ -55,9 +57,9 @@ $utilities: map-merge(
       (
         values: (
           baseline: baseline,
-          top: top, 
+          top: top,
           middle: middle,
-          bottom: bottom, 
+          bottom: bottom,
           text-bottom: text-bottom,
           text-top: text-top,
           sub: sub
@@ -72,10 +74,10 @@ $utilities: map-merge(
                 map-get(map-get($utilities, "top"), "values"), (
                     5: 5%,
                     10: 10%
-                ) 
+                )
             )
         )
-    ),    
+    ),
     /* Amend width util */
     "width": map-merge(
       map-get($utilities, "width"),
@@ -125,7 +127,7 @@ $utilities: map-merge(
       (
         state: hover focus active
       )
-    ), 
+    ),
     /* Amend text color to include states */
     "background-color": map-merge(
       map-get($utilities, "background-color"),
@@ -133,7 +135,7 @@ $utilities: map-merge(
         state: hover,
         responsive: true
       )
-    ),   
+    ),
     /* Amend shadow to add states */
     "shadow": map-merge(
       map-get($utilities, "shadow"),
@@ -152,7 +154,7 @@ $utilities: map-merge(
           (transparent: $border-width solid transparent)
         )
       )
-    ),  
+    ),
     /* add letter spacing */
     "letter-spacing": (
       property: letter-spacing,
@@ -192,7 +194,7 @@ $utilities: map-merge(
         "40": 40,
         "50": 50
       )
-    ),   
+    ),
     /* Amend viewport height to include additional sizes*/
     "viewport-height": map-merge(
       map-get($utilities, "viewport-height"),
@@ -244,6 +246,6 @@ $utilities: map-merge(
             (10: 10vw, 25: 25vw, 50: 50vw, 75: 75vw)
           )
         )
-      ),            
+      ),
   )
 )

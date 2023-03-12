@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+{{ include 'header/head/head' title=config.defaultPageTitle }}
+
+<body class="{{ config.classes.body }}">
+
+    <!-- Navbar -->
+    {{ include 'header/navbar/navbar'
+        configClassList=config.classes.navbar
+        classList="" }}
+    <!-- / Navbar-->
+
+    <!-- Main Section-->
+    <section class="mt-5 container {{ config.classes.content }}">
+        <!-- Page Content Goes Here -->
+
+        <h1 class="mb-4 display-5 fw-bold text-center">Checkout Securely</h1>
+        <p class="text-center mx-auto">Please fill in the details below to complete your order. Already registered?
+            <a href="#">Login here.</a></p>
+
+            <div class="row g-md-8 mt-4">
+                <!-- Checkout Panel Left -->
+                <div class="col-12 col-lg-6 col-xl-7">
+                    {{ include 'checkout/checkout-contact' }}
+                    {{ include 'checkout/checkout-shipping' }}
+                    {{ include 'checkout/checkout-billing' }}
+                    {{ include 'checkout/checkout-shipping-method' }}
+                    {{ include 'checkout/checkout-payment' }}
+                </div>
+                <!-- / Checkout Panel Left -->
+
+                <!-- Checkout Panel Summary -->
+                <div class="col-12 col-lg-6 col-xl-5">
+                    {{ include 'checkout/checkout-summary' entries=cart-items.entries }}
+                </div>
+                <!-- /Checkout Panel Summary -->
+            </div>
+
+        <!-- /Page Content -->
+    </section>
+    <!-- / Main Section-->
+
+    <!-- Footer -->
+    {{ include 'footer/footer' configClassList=config.classes.footer classList="" }}
+
+    <!-- Offcanvas Imports-->
+    {{ include 'offcanvas/offcanvas' }}
+
+    <!-- Search Overlay-->
+    {{ include 'search/search-overlay' }}
+
+    <!-- Theme JS -->
+    {{ include 'footer/scripts' }}
+
+</body>
+
+</html>

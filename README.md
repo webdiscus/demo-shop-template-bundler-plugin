@@ -1,9 +1,21 @@
 # Alpine - Bootstrap 5 HTML Responsive Ecommerce Template
 
+> **Note**
+> 
+> This is improved fork of the [alpine-html-bootstrap](https://github.com/PixelRocket-Shop/alpine-html-bootstrap) repository.
+> 
+> **Improvements**
+> - optimized for Webpack 5
+> - build with the powerful [html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin)
+> - resolving source scripts, styles, assets specified directly in template
+> - using the latest version of Handlebars
+> - watching changes in all assets and partials
+> - fixed CSS issues in FireFox
+
 ## Overview
 For the fashion focused online store, Alpine is a responsive Bootstrap 5 Ecommerce template with a "Ken Burns" effect on the homepage slideshow, angled banners, and a custom image hotspot banner with popout product cards. Large product images on category pages give you ample room for showcasing products while simultaneously providing easy navigation throughout the website. It's the perfect starting point for any fashion retail website, and the template's clean and minimal design means it's easy to modify and painless to integrate with your custom Ecommerce application. And above all, it's free.
 
-<strong><a href="https://alpine-html-bootstrap.vercel.app/">View Demo</a> | <a href="https://github.com/PixelRocket-Shop/alpine-html-bootstrap/archive/main.zip">Download ZIP</a></strong>
+<strong><a href="https://alpine-html-bootstrap.vercel.app/">View Demo</a> | <a href="https://github.com/webdiscus/alpine-html-bootstrap/archive/refs/heads/master.zip">Download ZIP</a></strong>
 
 ![Bootstrap 5 Responsive HTML Fashion Store Template](https://pixelrocket-public-assets.s3.eu-west-2.amazonaws.com/github-assets/alpine-html/homepage-medium.jpg "Alpine | Responsive Bootstrap 5 Ecommerce Template")
 
@@ -31,7 +43,7 @@ Most developers will be editing the source code and will also be running Webpack
 
 
 ## Quick Start
-- [Download the latest release](https://github.com/PixelRocket-Shop/alpine-html-bootstrap/archive/main.zip) OR clone the repo: `git clone https://github.com/PixelRocket-Shop/alpine-html-bootstrap.git`
+- [Download the latest release](https://github.com/webdiscus/alpine-html-bootstrap/archive/refs/heads/master.zip) OR clone the repo: `git clone https://github.com/webdiscus/alpine-html-bootstrap.git`
 - Install Node.js if you don't already have it on your system.
 - Open the project root in your command line.
 - run `npm install` in your command line.
@@ -84,13 +96,13 @@ To keep code repetition to a minimum, we've used Handlebars.js as the templating
 
 📁 src - Template source code. Go here to customise your template.
 
-📁 src/assets - Template assets such as CSS, JS, Images etc.
+📁 src/assets - Template assets such as CSS, JS, Images, Font etc.
 
 📁 src/data - Template JSON Data files. We use these JSON files to make your job easier to insert content into the template. 
 
-📁 src/html - Template pages. Go here to edit existing pages or add new pages.
+📁 src/views/pages - Template pages. Go here to edit existing pages or add new pages.
 
-📁 src/partials - Handlebars partial templates. 
+📁 src/views/partials - Handlebars partial templates. 
 
 
 ## Handlebars
@@ -99,37 +111,37 @@ Handlebars is a template engine that allows us to keep our template source code 
 We use Handlebars for two main reasons: firstly, the use of Handlebars partials allows us to reference the same file in multiple HTML files and means that you only have to edit the code from a single source. If you're used to working with React or Vue, this would be the same as referencing a component. Secondly, the use of JSON data for our dummy catalogue data keeps our template code clean. We can easily output 10 dummy products on our listing page by outputting a basic Handlebars loop.
 
 ### Example Handlebars Partial
-Open the following file in our template: src/html/index.html.
+Open the following file in our template: src/views/pages/index.html.
 
 Around line 46 you'll see the following code:
 ```
-{{> swiper/swiper-hero-slideshow }}
+{{ include 'swiper/swiper-hero-slideshow' }}
 ```
-That's a Handlebars partial. That code tells Handlebars to look inside a folder called swiper (located in the partials folder) and then to find a file called swiper-hero-slideshow and insert it into the index.html file when it is compiled.
+That's a Handlebars partial. That code tells Handlebars to look inside a folder called swiper (located in the partials folder) and then to find a file called swiper-hero-slideshow.html and insert it into the index.html file when it is compiled.
 
 There are a few important notes about our use of Handlebars partials:
 
-* All of our partials are stored inside src/partials. Do not place partials anywhere else.
+* All of our partials are stored inside src/views/partials. Do not place partials anywhere else.
 * We use .html as our partial file extension. We have also added .svg as a valid partial file extension.
-* If you have folders within folders inside your partial folder, only reference the folder the partial resides in. So "partials/header/navbars/navbar.html" would be referenced as "navbars/navbar".
-* Do not include the partial file extension. Note in the example above that we output "swiper-hero-slideshow" and not "swiper-hero-slideshow.html"
+* If you have folders within folders inside your partial folder, only reference the folder the partial resides in. So "partials/header/navbars/navbar.html" would be referenced as "header/navbars/navbar".
+* Do not include the partial file extension. Note in the example above that we output "swiper-hero-slideshow" and not "swiper-hero-slideshow.html".
 
 ### Handlebars Loops
-Let's look at how we use Handlebars to keep our code base clean. Open up the category page: src/html/category.html. 
+Let's look at how we use Handlebars to keep our code base clean. Open up the category page: src/views/pages/category.html. 
 
 Around line 56, you will find this code:
 ```
-{{#if (config category-products)}}
+{{#if category-products}}
     {{#each (limit category-products.entries 4)}}
         <div class="col-12 col-sm-6 col-md-4">
-            {{> listing-cards/listing-card this }}
+            {{ include 'category/listing-cards/listing-card' this }}
         </div>
     {{/each}}
 {{/if}}
 ```
-And that's our loop for a category page. We're passing in JSON data to our Handlebars loop, then inside the loop we are referencing a Handlebars partial and passing it the data for each loop item:
+And that's our loop for a category page. We're passing in JSON data to our Handlebars loop, then inside the loop we are including a Handlebars partial and passing it the data for each loop item:
 ```
-{{> listing-cards/listing-card this }}
+{{ include 'category/listing-cards/listing-card' this }}
 ```
 ## Template JSON Data
 The Webpack Handlebars plugin that we use comes with a very handy utility that allows us to pass in JSON files as template data.
@@ -139,10 +151,10 @@ Please navigate to: src/data. Here is where our template data JSON files reside.
 Again, if we reference our category page loop:
 
 ```
-{{#if (config category-products)}}
+{{#if category-products}}
     {{#each (limit category-products.entries 4)}}
         <div class="col-12 col-sm-6 col-md-4">
-            {{> listing-cards/listing-card this }}
+            {{ include 'category/listing-cards/listing-card' this }}
         </div>
     {{/each}}
 {{/if}}
@@ -159,7 +171,7 @@ This is the main entry point for all other SASS/CSS files.
 
 
 ## Create New Pages
-To create a new page, navigate in your code editor to: src/html. To make it easier to get the correct HTML in place, clone an existing page. Rename the newly-created file to whatever URL you require. And that's it. You are now free to open the new page with your code editor, make your changes, and then save the file. Quit Webpack devserver and restart it for the page to show up.
+To create a new page, navigate in your code editor to: src/views/pages. To make it easier to get the correct HTML in place, clone an existing page. Rename the newly-created file to whatever URL you require. And that's it. You are now free to open the new page with your code editor, make your changes, and then save the file. Quit Webpack devserver and restart it for the page to show up.
 
 
 ## Bootstrap Documentation

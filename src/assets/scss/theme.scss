@@ -17,16 +17,13 @@ Note: '~' in the import statement means the file is imported from the node_modul
 - Custom CSS - Add your custom CSS to this file
 */
 
-
-
-
 /* Bootstrap Functions - DO NOT CHANGE ANYTHING IN HERE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import '~bootstrap/scss/functions';
+@import 'bootstrap/scss/functions';
 
 /* Bootstrap Mixins - DO NOT CHANGE ANYTHING IN HERE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import '~bootstrap/scss/mixins';
+@import 'bootstrap/scss/mixins';
 
 /* Framework SASS Variables - GO HERE TO OVERRIDE BOOTSTRAP VARS.
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -42,7 +39,7 @@ Note: '~' in the import statement means the file is imported from the node_modul
 
 /* Bootstrap Core - DO NOT CHANGE ANYTHING IN HERE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 
 /* Framework Custom Properties (CSS Variables)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

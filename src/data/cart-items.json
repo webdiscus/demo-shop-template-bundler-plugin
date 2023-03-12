@@ -7,7 +7,7 @@
             "qty": "1",
             "currency": "$",
             "options": "Mens / Blue / Medium",
-            "img": "{{webRoot}}/assets/images/products/product-1.jpg"
+            "img": "@images/products/product-1.jpg"
         },
         {
             "title": "North Face Jacket",
@@ -16,7 +16,7 @@
             "qty": "2",
             "currency": "$",
             "options": "Mens / Blue / Large",
-            "img": "{{webRoot}}/assets/images/products/product-2.jpg"
+            "img": "@images/products/product-2.jpg"
         },
         {
             "title": "Womens Adidas Hoodie",
@@ -25,7 +25,7 @@
             "qty": "1",
             "currency": "$",
             "options": "Womens / Red / Medium",
-            "img": "{{webRoot}}/assets/images/products/product-4.jpg"
-        }            
+            "img": "@images/products/product-4.jpg"
+        }
     ]
 }

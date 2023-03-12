@@ -1,0 +1,23 @@
+.bg-img-cover {
+  &.bg-banner-1 {
+    background-image: url('@images/banners/banner-1.jpg')
+  }
+  &.bg-banner-2 {
+    background-image: url('@images/banners/banner-2.jpg')
+  }
+  &.bg-banner-3 {
+    background-image: url('@images/banners/banner-3.jpg')
+  }
+  &.bg-banner-4 {
+    background-image: url('@images/banners/banner-4.jpg')
+  }
+  &.bg-slideshow-1 {
+    background-image: url('@images/slideshows/slideshow-1.jpg')
+  }
+  &.bg-slideshow-2 {
+    background-image: url('@images/slideshows/slideshow-2.jpg')
+  }
+  &.bg-slideshow-3 {
+    background-image: url('@images/slideshows/slideshow-3.jpg')
+  }
+}

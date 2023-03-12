@@ -20,24 +20,24 @@
     min-height: 30px;
     background-origin: padding-box;
 
-    &.pi-paypal { background: url('../svgs/paypal.svg') center center no-repeat;}
-    &.pi-apple-pay { background: url('../svgs/apple-pay.svg') center center no-repeat;}
-    &.pi-google-pay { background: url('../svgs/google-pay.svg') center center no-repeat;}
-    &.pi-alipay { background: url('../svgs/alipay.svg') center center no-repeat;}
-    &.pi-mastercard { background: url('../svgs/mastercard.svg') center center no-repeat;}
-    &.pi-visa { background: url('../svgs/visa.svg') center center no-repeat;}
-    &.pi-american-express { background: url('../svgs/american-express.svg') center center no-repeat;}
-    &.pi-diners-club { background: url('../svgs/diners-club.svg') center center no-repeat;}
-    &.pi-maestro { background: url('../svgs/maestro.svg') center center no-repeat;}
-    &.pi-vpay { background: url('../svgs/vpay.svg') center center no-repeat;}
-    &.pi-girocard { background: url('../svgs/girocard.svg') center center no-repeat;}
-    &.pi-klarna { background: url('../svgs/klarna.svg') center center no-repeat;}
-    &.pi-giropay { background: url('../svgs/giropay.svg') center center no-repeat;}
-    &.pi-ideal { background: url('../svgs/ideal.svg') center center no-repeat;}
-    &.pi-przelewy24 { background: url('../svgs/przelewy24.svg') center center no-repeat;}
-    &.pi-bitcoin { background: url('../svgs/bitcoin.svg') center center no-repeat;}
-    &.pi-ethereum { background: url('../svgs/ethereum.svg') center center no-repeat;}
-    &.pi-ripple { background: url('../svgs/ripple.svg') center center no-repeat;}
+    &.pi-paypal { background: url('@images/svgs/paypal.svg') center center no-repeat;}
+    &.pi-apple-pay { background: url('@images/svgs/apple-pay.svg') center center no-repeat;}
+    &.pi-google-pay { background: url('@images/svgs/google-pay.svg') center center no-repeat;}
+    &.pi-alipay { background: url('@images/svgs/alipay.svg') center center no-repeat;}
+    &.pi-mastercard { background: url('@images/svgs/mastercard.svg') center center no-repeat;}
+    &.pi-visa { background: url('@images/svgs/visa.svg') center center no-repeat;}
+    &.pi-american-express { background: url('@images/svgs/american-express.svg') center center no-repeat;}
+    &.pi-diners-club { background: url('@images/svgs/diners-club.svg') center center no-repeat;}
+    &.pi-maestro { background: url('@images/svgs/maestro.svg') center center no-repeat;}
+    &.pi-vpay { background: url('@images/svgs/vpay.svg') center center no-repeat;}
+    &.pi-girocard { background: url('@images/svgs/girocard.svg') center center no-repeat;}
+    &.pi-klarna { background: url('@images/svgs/klarna.svg') center center no-repeat;}
+    &.pi-giropay { background: url('@images/svgs/giropay.svg') center center no-repeat;}
+    &.pi-ideal { background: url('@images/svgs/ideal.svg') center center no-repeat;}
+    &.pi-przelewy24 { background: url('@images/svgs/przelewy24.svg') center center no-repeat;}
+    &.pi-bitcoin { background: url('@images/svgs/bitcoin.svg') center center no-repeat;}
+    &.pi-ethereum { background: url('@images/svgs/ethereum.svg') center center no-repeat;}
+    &.pi-ripple { background: url('@images/svgs/ripple.svg') center center no-repeat;}
 
     &.pi-lg {
         width: 80px;

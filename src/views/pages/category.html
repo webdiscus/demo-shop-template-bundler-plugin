@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Head -->
+{{ include 'header/head/head' title=config.defaultPageTitle }}
+
+<body class="{{ config.classes.body }}">
+
+    <!-- Navbar -->
+    {{ include 'header/navbar/navbar'
+        configClassList=config.classes.navbar
+        classList="border-0" }}
+    <!-- / Navbar-->
+
+    <!-- Main Section-->
+    <section class="mt-0 {{ config.classes.content }}">
+
+        <!-- Category Top Banner -->
+        <div class="py-6 bg-img-cover bg-banner-1 bg-dark bg-overlay-gradient-dark position-relative overflow-hidden mb-4 bg-pos-center-center">
+            <div class="container position-relative z-index-20" data-aos="fade-right" data-aos-delay="300">
+                {{ include 'breadcrumbs/breadcrumbs-two' }}
+                <h1 class="fw-bold display-6 mb-4 text-white">Latest Arrivals (121)</h1>
+                <div class="col-12 col-md-6">
+                    <p class="lead text-white mb-0">
+                        Move, stretch, jump and hike in our latest waterproof arrivals. We've got you covered for your
+                        hike or climbing sessions, from Gortex jackets to lightweight waterproof pants. Discover our
+                        latest range of outdoor clothing.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Category Top Banner -->
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Category Aside/Sidebar -->
+                <div class="d-none d-lg-flex col-lg-3">
+                    <div class="aside-container pe-4">
+                        {{ include 'category/asides/aside-menu-one' }}
+                    </div>
+                </div>
+                <!-- / Category Aside/Sidebar -->
+
+                <!-- Category Products-->
+                <div class="col-12 col-lg-9">
+
+                    <!-- Top Toolbar-->
+                    {{ include 'category/toolbars/toolbar-top' }}
+                    <!-- / Top Toolbar-->
+
+                    <!-- Products-->
+                    <div class="row g-4 mb-5">
+                        {{#if category-products}}
+                            {{#each (limit category-products.entries 4)}}
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    {{ include 'category/listing-cards/listing-card' this }}
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                        <div class="d-none d-md-flex col-md-8">
+                            <div class="w-100 h-100 position-relative">
+                                <div class="position-absolute w-50 h-100 start-0 bottom-0 top-0 bg-pos-center-center bg-img-cover bg-banner-3">
+                                </div>
+                                <div
+                                    class="position-absolute w-50 h-100 bg-light end-0 top-0 bottom-0 d-flex justify-content-center align-items-center">
+                                    <div class="px-4 text-center">
+                                        <h4 class="fs-4 fw-bold mb-4">Built for adventure</h4>
+                                        <p class="mb-4">The perfect grab-and-go layer for every hiking adventure</p>
+                                        <a href="#" class="text-link-border border-2 pb-1 fw-bolder">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{#if category-products}}
+                            {{#each (limit category-products.entries 6)}}
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    {{ include 'category/listing-cards/listing-card' this }}
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                    </div>
+                    <!-- / Products-->
+
+                    <!-- Pagination-->
+                    {{ include 'category/pagination/pagination' }}
+                    <!-- / Pagination-->
+
+                    <!-- Related Categories-->
+                    <div class="border-top mt-5 pt-5">
+                        <p class="lead fw-bolder">Related Categories</p>
+                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                            <a class="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2 mb-md-0 text-white-hover"
+                                href="#">Hiking
+                                Shoes</a>
+                            <a class="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2 mb-md-0 text-white-hover"
+                                href="#">Waterproof Trousers</a>
+                            <a class="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2 mb-md-0 text-white-hover"
+                                href="#">Hiking
+                                Shirts</a>
+                            <a class="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2 mb-md-0 text-white-hover"
+                                href="#">Jackets</a>
+                            <a class="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2 mb-md-0 text-white-hover"
+                                href="#">Gilets</a>
+                            <a class="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2 mb-md-0 text-white-hover"
+                                href="#">Hiking
+                                Socks</a>
+                            <a class="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2 mb-md-0 text-white-hover"
+                                href="#">Rugsacks</a>
+                        </div>
+                    </div>
+                    <!-- Related Categories-->
+
+                </div>
+                <!-- / Category Products-->
+
+            </div>
+        </div>
+
+    </section>
+    <!-- / Main Section-->
+
+    <!-- Footer -->
+    {{ include 'footer/footer' configClassList=config.classes.footer classList="" }}
+
+    <!-- Offcanvas Imports-->
+    {{ include 'offcanvas/offcanvas' }}
+
+    <!-- Search Overlay-->
+    {{ include 'search/search-overlay' }}
+
+    <!-- Theme JS -->
+    {{ include 'footer/scripts' }}
+
+</body>
+
+</html>
