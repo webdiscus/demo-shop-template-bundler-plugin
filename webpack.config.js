@@ -56,11 +56,11 @@ const projectData = merge(
 );
 
 // Create the entry object containing pages located in src/views/pages/ directory.
-const entry = {};
-glob.sync(path.join(PATHS.pages, '/**/*.html')).map((file) => {
+const entry = glob.sync(path.join(PATHS.pages, '/**/*.html')).reduce((entry, file) => {
   const name = path.relative(PATHS.pages, file).replace(/\.html$/, '');
   entry[name] = file;
-})
+  return entry;
+}, {});
 
 // Main webpack config options.
 module.exports = (env, argv) => {
